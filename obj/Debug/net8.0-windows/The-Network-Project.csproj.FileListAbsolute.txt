@@ -6,7 +6,6 @@ C:\Users\..DEKSTOP-4-HANAA\Documents\TNP\The-Network-Project\bin\Debug\net8.0-wi
 C:\Users\..DEKSTOP-4-HANAA\Documents\TNP\The-Network-Project\obj\Debug\net8.0-windows\MainWindow.g.cs
 C:\Users\..DEKSTOP-4-HANAA\Documents\TNP\The-Network-Project\obj\Debug\net8.0-windows\App.g.cs
 C:\Users\..DEKSTOP-4-HANAA\Documents\TNP\The-Network-Project\obj\Debug\net8.0-windows\The-Network-Project_MarkupCompile.cache
-C:\Users\..DEKSTOP-4-HANAA\Documents\TNP\The-Network-Project\obj\Debug\net8.0-windows\The-Network-Project_MarkupCompile.lref
 C:\Users\..DEKSTOP-4-HANAA\Documents\TNP\The-Network-Project\obj\Debug\net8.0-windows\MainWindow.baml
 C:\Users\..DEKSTOP-4-HANAA\Documents\TNP\The-Network-Project\obj\Debug\net8.0-windows\The-Network-Project.g.resources
 C:\Users\..DEKSTOP-4-HANAA\Documents\TNP\The-Network-Project\obj\Debug\net8.0-windows\The-Network-Project.GeneratedMSBuildEditorConfig.editorconfig
@@ -19,3 +18,10 @@ C:\Users\..DEKSTOP-4-HANAA\Documents\TNP\The-Network-Project\obj\Debug\net8.0-wi
 C:\Users\..DEKSTOP-4-HANAA\Documents\TNP\The-Network-Project\obj\Debug\net8.0-windows\The-Network-Project.pdb
 C:\Users\..DEKSTOP-4-HANAA\Documents\TNP\The-Network-Project\obj\Debug\net8.0-windows\The-Network-Project.genruntimeconfig.cache
 C:\Users\..DEKSTOP-4-HANAA\Documents\TNP\The-Network-Project\obj\Debug\net8.0-windows\ref\The-Network-Project.dll
+C:\Users\..DEKSTOP-4-HANAA\Documents\TNP\The-Network-Project\obj\Debug\net8.0-windows\VirtualNetworkConfigurationWindow.baml
+C:\Users\..DEKSTOP-4-HANAA\Documents\TNP\The-Network-Project\obj\Debug\net8.0-windows\VirtualNetworkConfigurationWindow.g.cs
+C:\Users\..DEKSTOP-4-HANAA\Documents\TNP\The-Network-Project\obj\Debug\net8.0-windows\Themes\DarkTheme.baml
+C:\Users\..DEKSTOP-4-HANAA\Documents\TNP\The-Network-Project\obj\Debug\net8.0-windows\Themes\LightTheme.baml
+C:\Users\..DEKSTOP-4-HANAA\Documents\TNP\The-Network-Project\obj\Debug\net8.0-windows\App.baml
+C:\Users\..DEKSTOP-4-HANAA\Documents\TNP\The-Network-Project\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\..DEKSTOP-4-HANAA\Documents\TNP\The-Network-Project\obj\Debug\net8.0-windows\The-Network-Project_MarkupCompile.lref

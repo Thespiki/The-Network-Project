@@ -1,12 +1,107 @@
-﻿<Window x:Class="The_Network_Project.MainWindow"
+﻿<Window x:Class="TheNetworkProject.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:The_Network_Project"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        xmlns:local="clr-namespace:TheNetworkProject"
+        Title="TheNetworkProject" Height="600" Width="800"
+        Background="{DynamicResource WindowBackgroundBrush}"
+        Foreground="{DynamicResource ForegroundBrush}">
+    <Window.Resources>
+        <!-- Style pour les boutons arrondis -->
+        <Style x:Key="RoundedButton" TargetType="Button">
+            <Setter Property="Background" Value="#007ACC"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="5"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!-- Style pour les onglets du bandeau -->
+        <Style x:Key="TabButton" TargetType="Button" BasedOn="{StaticResource RoundedButton}">
+            <Setter Property="Background" Value="#E0E0E0"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+    </Window.Resources>
 
-    </Grid>
+    <DockPanel>
+        <!-- Bandeau supérieur avec onglets et bouton "+" -->
+        <DockPanel DockPanel.Dock="Top" Background="LightGray" Height="40">
+            <Button Content="+" DockPanel.Dock="Right" ToolTip="Créer un réseau virtuel" 
+                    Style="{StaticResource RoundedButton}" Click="CreateVirtualNetwork_Click"/>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <Button Content="Accueil" Style="{StaticResource TabButton}" />
+                <!-- D'autres onglets pourront être ajoutés ici -->
+            </StackPanel>
+        </DockPanel>
+
+        <!-- Zone principale -->
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Zone Réseau Physique -->
+            <GroupBox Header="Réseau Physique" Grid.Column="0" Margin="5">
+                <StackPanel>
+                    <!-- Affiche le statut du réseau physique -->
+                    <TextBlock x:Name="PhysicalNetworkStatus" FontSize="16" Margin="10"/>
+                </StackPanel>
+            </GroupBox>
+
+            <!-- Zone Réseaux Virtuels -->
+            <GroupBox Header="Réseaux Virtuels" Grid.Column="1" Margin="5">
+                <StackPanel>
+                    <Button Content="Créer un réseau" Style="{StaticResource RoundedButton}"
+                            Click="CreateVirtualNetwork_Click"/>
+                    <ListBox x:Name="VirtualNetworksList">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate DataType="{x:Type local:VirtualNetwork}">
+                                <Grid Margin="5">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <!-- Ligne principale avec le nom et le bouton options -->
+                                    <DockPanel Grid.Row="0">
+                                        <TextBlock Text="{Binding Name}" VerticalAlignment="Center" Margin="5"/>
+                                        <Button Content="..." DockPanel.Dock="Right" VerticalAlignment="Center" 
+                                                Style="{StaticResource RoundedButton}" Margin="5"
+                                                Click="VirtualNetworkOptions_Click"/>
+                                    </DockPanel>
+                                    <!-- Volet d'options caché qui s'affiche via un Style -->
+                                    <StackPanel x:Name="OptionsPanel" Grid.Row="1" Orientation="Horizontal" Margin="5">
+                                        <StackPanel.Style>
+                                            <Style TargetType="StackPanel">
+                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding OptionsVisible}" Value="True">
+                                                        <Setter Property="Visibility" Value="Visible"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </StackPanel.Style>
+                                        <TextBox Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                                 Width="150" Margin="0,0,5,0"/>
+                                        <Button Content="Renommer" Style="{StaticResource RoundedButton}" Margin="0,0,5,0"
+                                                Click="RenameVirtualNetwork_Click"/>
+                                        <Button Content="Supprimer" Style="{StaticResource RoundedButton}"
+                                                Click="DeleteVirtualNetwork_Click"/>
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </StackPanel>
+            </GroupBox>
+        </Grid>
+    </DockPanel>
 </Window>
