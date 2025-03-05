@@ -1,6 +1,12 @@
 # The Network Project (TNP)
-This is an app that allows to manage or simulate your network with a simple interface.
 
-🛠This project is under construction :), stay tuned for more!🛠
+## Specifications
 
-You can see the specifications on this google doc : https://docs.google.com/document/d/1jCooWKbT_OhxOUeeZK9VqmCuy7GL-cw3dJtPPhqzPKg/edit?usp=sharing
+### Features:
+- **Dashboard** providing information (to be specified later).
+- **Network simulations**: Set up physical networks through an easy-to-use interface, supporting multiple network configurations (single or multiple networks).
+- **Proper network interface management**.
+- **Knowledge of network components**, including server models, switches, modems, operating systems, etc.
+- **Collaborative editing**, allowing multiple users to modify the network simultaneously.
+- **User account management**.
+- **Team management**.
