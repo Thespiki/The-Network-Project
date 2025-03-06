@@ -3,4 +3,4 @@ This is an app that allows to manage or simulate your network with a simple inte
 
 🛠This project is under construction :), stay tuned for more!🛠
 
-You can see the specifications on this google doc : https://docs.google.com/document/d/1jCooWKbT_OhxOUeeZK9VqmCuy7GL-cw3dJtPPhqzPKg/edit?usp=sharing
+[You can see the specifications on the specification branch](https://github.com/Thespiki/The-Network-Project/tree/Specifications)
