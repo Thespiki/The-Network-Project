@@ -11,4 +11,7 @@ Simulate a network to preview how will it work, what you will need and what will
 TNP will allow you to manage servers, routers, modems, eventually computers and maybe more (even if you cannot configure it within TNP you will still be able to configure other thnigs such as its place in the network)
 TNP will allow with only a few clicks to create a web server, a game server, a database, with explainations and total management.
 
+# TNP open source ?
+TNP will be open source so that the community can contribute with hardware, server configuration, bugs etc...
+
 🛠This project is under construction, once the beta is out, you will be able to contribute to this project. :), stay tuned for more!🛠
