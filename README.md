@@ -14,4 +14,4 @@ TNP will allow with only a few clicks to create a web server, a game server, a d
 ## TNP open source ?
 TNP will be open source so that the community can contribute with hardware, server configuration, bugs etc...
 
-🛠This project is under construction, once the beta is out, you will be able to contribute to this project. :), stay tuned for more!🛠
+'**🛠This project is under construction, once the beta is out, you will be able to contribute to this project. :), stay tuned for more!🛠**'
