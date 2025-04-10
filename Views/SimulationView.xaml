@@ -1,0 +1,77 @@
+<UserControl x:Class="TNP.App.Views.SimulationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TNP.App.Views"
+             xmlns:converters="clr-namespace:TNP.App.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    
+    <UserControl.Resources>
+        <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    </UserControl.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Control Panel -->
+        <Border Grid.Row="0" Background="#F0F0F0" BorderBrush="#CCC" BorderThickness="0,0,0,1" Padding="10">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Start Simulation" Command="{Binding StartSimulationCommand}" Margin="0,0,10,0"
+                        IsEnabled="{Binding IsSimulationRunning, Converter={StaticResource InverseBoolConverter}}"/>
+                <Button Content="Stop Simulation" Command="{Binding StopSimulationCommand}" Margin="0,0,10,0"
+                        IsEnabled="{Binding IsSimulationRunning}"/>
+                <Button Content="Reset" Command="{Binding ResetSimulationCommand}" Margin="0,0,10,0"/>
+                <ComboBox Width="120" ItemsSource="{Binding SimulationScenarios}" SelectedItem="{Binding SelectedScenario}"
+                          DisplayMemberPath="Name" Margin="0,0,10,0"
+                          IsEnabled="{Binding IsSimulationRunning, Converter={StaticResource InverseBoolConverter}}"/>
+                <TextBlock Text="Speed:" VerticalAlignment="Center" Margin="10,0,5,0"/>
+                <Slider Width="100" Minimum="0.1" Maximum="2" Value="{Binding SimulationSpeed}" 
+                        TickFrequency="0.1" TickPlacement="BottomRight" IsSnapToTickEnabled="True"/>
+            </StackPanel>
+        </Border>
+        
+        <!-- Simulation View -->
+        <Grid Grid.Row="1">
+            <ContentControl Content="{Binding NetworkDesigner}"/>
+            
+            <!-- Simulation Overlay -->
+            <Canvas x:Name="SimulationCanvas" IsHitTestVisible="False">
+                <!-- Data packets and visual effects will be added here programmatically -->
+            </Canvas>
+            
+            <!-- Not Running Message -->
+            <Border Background="#80FFFFFF" Visibility="{Binding IsSimulationRunning, Converter={StaticResource InverseBoolToVisibilityConverter}}">
+                <TextBlock Text="Simulation not running. Press 'Start Simulation' to begin." 
+                         HorizontalAlignment="Center" VerticalAlignment="Center"
+                         FontSize="16" Foreground="#555"/>
+            </Border>
+        </Grid>
+        
+        <!-- Status Bar -->
+        <Border Grid.Row="2" Background="#F0F0F0" BorderBrush="#CCC" BorderThickness="0,1,0,0" Padding="10,5">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                
+                <TextBlock Grid.Column="0" Text="{Binding StatusMessage}"/>
+                
+                <StackPanel Grid.Column="1" Orientation="Horizontal">
+                    <TextBlock Text="Simulation Time: " Margin="0,0,5,0"/>
+                    <TextBlock Text="{Binding SimulationTime, StringFormat={}{0:hh\\:mm\\:ss}}"/>
+                    <TextBlock Text=" | Packets: "/>
+                    <TextBlock Text="{Binding PacketCount}"/>
+                    <TextBlock Text=" | Errors: "/>
+                    <TextBlock Text="{Binding ErrorCount}" Foreground="Red"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

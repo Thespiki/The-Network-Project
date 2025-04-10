@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net6.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWPF>true</UseWPF>
+		<RootNamespace>TNP.App</RootNamespace>
+		<StartupObject>TNP.App.App</StartupObject>
+		<Authors>The Network Project Team</Authors>
+		<Product>The Network Project</Product>
+		<Description>A network design and simulation tool</Description>
+		<Copyright>Copyright © 2024</Copyright>
+		<Version>1.0.0</Version>
+		<EnableWindowsTargeting>true</EnableWindowsTargeting>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="Assets\**\*" />
+		<None Remove="Resources\**\*" />
+		<None Remove="..\App\**\*" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Resource Include="Assets\**\*" />
+		<Resource Include="Resources\**\*" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Remove="..\App\**\*" />
+		<Page Remove="..\App\**\*" />
+		<EmbeddedResource Remove="..\App\**\*" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="Configs\" />
+		<Folder Include="Assets\" />
+		<Folder Include="Plugins\" />
+	</ItemGroup>
+
+</Project>

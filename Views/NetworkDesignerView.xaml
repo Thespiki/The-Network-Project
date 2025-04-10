@@ -1,0 +1,86 @@
+<UserControl x:Class="TNP.App.Views.NetworkDesignerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TNP.App.Views"
+             xmlns:converters="clr-namespace:TNP.App.Converters"
+             xmlns:models="clr-namespace:TNP.App.Models"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    
+    <UserControl.Resources>
+        <converters:BoolToGridBackgroundConverter x:Key="BoolToGridBackgroundConverter"/>
+        <converters:BoolToSelectedBrushConverter x:Key="BoolToSelectedBrushConverter"/>
+        <converters:BoolToSelectedThicknessConverter x:Key="BoolToSelectedThicknessConverter"/>
+        <converters:BoolToSelectedConnectionThicknessConverter x:Key="BoolToSelectedConnectionThicknessConverter"/>
+        <converters:ConnectionTypeToColorConverter x:Key="ConnectionTypeToColorConverter"/>
+        <converters:ConnectionActivityToDashArrayConverter x:Key="ConnectionActivityToDashArrayConverter"/>
+
+        <!-- Network Element Template -->
+        <DataTemplate x:Key="NetworkElementTemplate" DataType="{x:Type models:NetworkElement}">
+            <Grid Width="60" Height="60" ToolTip="{Binding Name}">
+                <Ellipse Fill="White" 
+                         Stroke="{Binding IsSelected, Converter={StaticResource BoolToSelectedBrushConverter}}"
+                         StrokeThickness="{Binding IsSelected, Converter={StaticResource BoolToSelectedThicknessConverter}}"/>
+                <Image Source="{Binding ElementTypeIcon}" Width="40" Height="40"/>
+                <TextBlock Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,2"/>
+            </Grid>
+        </DataTemplate>
+
+        <!-- Connection Template -->
+        <DataTemplate x:Key="ConnectionTemplate" DataType="{x:Type models:Connection}">
+            <Line X1="{Binding SourcePoint.X}" Y1="{Binding SourcePoint.Y}" 
+                  X2="{Binding TargetPoint.X}" Y2="{Binding TargetPoint.Y}"
+                  Stroke="{Binding ConnectionType, Converter={StaticResource ConnectionTypeToColorConverter}}"
+                  StrokeThickness="{Binding IsSelected, Converter={StaticResource BoolToSelectedConnectionThicknessConverter}}"
+                  StrokeDashArray="{Binding IsActive, Converter={StaticResource ConnectionActivityToDashArrayConverter}}"/>
+        </DataTemplate>
+    </UserControl.Resources>
+    
+    <Grid Background="{Binding ShowGrid, Converter={StaticResource BoolToGridBackgroundConverter}}">
+        <!-- Network Canvas -->
+        <Canvas x:Name="NetworkCanvas" Background="Transparent" ClipToBounds="True"
+                MouseLeftButtonDown="NetworkCanvas_MouseLeftButtonDown"
+                MouseMove="NetworkCanvas_MouseMove"
+                MouseLeftButtonUp="NetworkCanvas_MouseLeftButtonUp"
+                PreviewMouseWheel="NetworkCanvas_PreviewMouseWheel">
+            
+            <!-- Connection Layer -->
+            <ItemsControl ItemsSource="{Binding Connections}" ItemTemplate="{StaticResource ConnectionTemplate}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Canvas IsItemsHost="True"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemContainerStyle>
+                    <Style TargetType="ContentPresenter">
+                        <Setter Property="Canvas.Left" Value="0"/>
+                        <Setter Property="Canvas.Top" Value="0"/>
+                    </Style>
+                </ItemsControl.ItemContainerStyle>
+            </ItemsControl>
+            
+            <!-- Network Elements Layer -->
+            <ItemsControl ItemsSource="{Binding Components}" ItemTemplate="{StaticResource NetworkElementTemplate}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Canvas IsItemsHost="True"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemContainerStyle>
+                    <Style TargetType="ContentPresenter">
+                        <Setter Property="Canvas.Left" Value="{Binding Position.X}"/>
+                        <Setter Property="Canvas.Top" Value="{Binding Position.Y}"/>
+                    </Style>
+                </ItemsControl.ItemContainerStyle>
+            </ItemsControl>
+            
+            <!-- Connection Creation Preview -->
+            <Line x:Name="ConnectionPreview" Visibility="Collapsed" Stroke="Gray" StrokeDashArray="4,2" StrokeThickness="2"/>
+            
+            <!-- Selection Rectangle -->
+            <Rectangle x:Name="SelectionRectangle" Visibility="Collapsed" Stroke="Blue" StrokeThickness="1" Fill="#3000BFFF" />
+        </Canvas>
+    </Grid>
+</UserControl>

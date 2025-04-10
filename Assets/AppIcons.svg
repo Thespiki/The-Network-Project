@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="800" viewBox="0 0 800 800">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #5e7ce2;
+      }
+      .cls-2 {
+        fill: #e25e5e;
+      }
+      .cls-3 {
+        fill: #5ee27c;
+      }
+      .cls-4 {
+        fill: #e2bd5e;
+      }
+      .cls-5 {
+        fill: #fff;
+      }
+      .cls-6 {
+        fill: none;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 15px;
+      }
+    </style>
+  </defs>
+  
+  <!-- Main App Icon -->
+  <g id="AppIcon">
+    <circle cx="400" cy="400" r="350" class="cls-1"/>
+    <path d="M400,150c-138.07,0-250,111.93-250,250S261.93,650,400,650s250-111.93,250-250S538.07,150,400,150Zm0,450c-110.46,0-200-89.54-200-200S289.54,250,400,250s200,89.54,200,200S510.46,600,400,600Z" class="cls-5"/>
+    
+    <!-- Network Elements -->
+    <g id="NetworkElements">
+      <!-- Router -->
+      <g id="Router" transform="translate(250, 250)">
+        <rect x="-60" y="-20" width="120" height="40" rx="5" ry="5" class="cls-1"/>
+        <line x1="-40" y1="-20" x2="-40" y2="20" class="cls-6"/>
+        <line x1="-20" y1="-20" x2="-20" y2="20" class="cls-6"/>
+        <line x1="0" y1="-20" x2="0" y2="20" class="cls-6"/>
+        <line x1="20" y1="-20" x2="20" y2="20" class="cls-6"/>
+        <line x1="40" y1="-20" x2="40" y2="20" class="cls-6"/>
+      </g>
+      
+      <!-- Switch -->
+      <g id="Switch" transform="translate(550, 250)">
+        <rect x="-60" y="-20" width="120" height="40" rx="5" ry="5" class="cls-3"/>
+        <line x1="-50" y1="-10" x2="-40" y2="-10" class="cls-6"/>
+        <line x1="-50" y1="0" x2="-40" y2="0" class="cls-6"/>
+        <line x1="-50" y1="10" x2="-40" y2="10" class="cls-6"/>
+        <line x1="40" y1="-10" x2="50" y2="-10" class="cls-6"/>
+        <line x1="40" y1="0" x2="50" y2="0" class="cls-6"/>
+        <line x1="40" y1="10" x2="50" y2="10" class="cls-6"/>
+        <line x1="-30" y1="0" x2="30" y2="0" class="cls-6"/>
+      </g>
+      
+      <!-- Modem -->
+      <g id="Modem" transform="translate(250, 550)">
+        <rect x="-60" y="-20" width="120" height="40" rx="5" ry="5" class="cls-2"/>
+        <line x1="-40" y1="-20" x2="-40" y2="20" class="cls-6"/>
+        <line x1="-20" y1="-20" x2="-20" y2="20" class="cls-6"/>
+        <line x1="20" y1="-20" x2="20" y2="20" class="cls-6"/>
+        <line x1="40" y1="-20" x2="40" y2="20" class="cls-6"/>
+      </g>
+      
+      <!-- Server -->
+      <g id="Server" transform="translate(550, 550)">
+        <rect x="-60" y="-60" width="120" height="120" rx="5" ry="5" class="cls-4"/>
+        <line x1="-60" y1="-20" x2="60" y2="-20" class="cls-6"/>
+        <line x1="-60" y1="20" x2="60" y2="20" class="cls-6"/>
+        <line x1="-40" y1="-40" x2="-20" y2="-40" class="cls-6"/>
+        <line x1="-40" y1="0" x2="-20" y2="0" class="cls-6"/>
+        <line x1="-40" y1="40" x2="-20" y2="40" class="cls-6"/>
+      </g>
+    </g>
+    
+    <!-- Connections -->
+    <g id="Connections">
+      <line x1="310" y1="250" x2="490" y2="250" class="cls-6"/>
+      <line x1="250" y1="310" x2="250" y2="490" class="cls-6"/>
+      <line x1="310" y1="550" x2="490" y2="550" class="cls-6"/>
+      <line x1="550" y1="310" x2="550" y2="490" class="cls-6"/>
+    </g>
+  </g>
+</svg>

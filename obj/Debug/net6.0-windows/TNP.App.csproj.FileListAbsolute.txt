@@ -1,0 +1,66 @@
+/home/runner/workspace/TNP/TNP.App/obj/Debug/net6.0-windows/TNP.App.csproj.AssemblyReference.cache
+/home/runner/workspace/TNP/TNP.App/obj/Debug/net6.0-windows/MainWindow.g.cs
+/home/runner/workspace/TNP/TNP.App/obj/Debug/net6.0-windows/Views/ElementPropertiesView.g.cs
+/home/runner/workspace/TNP/TNP.App/obj/Debug/net6.0-windows/Views/NetworkDesignerView.g.cs
+/home/runner/workspace/TNP/TNP.App/obj/Debug/net6.0-windows/Views/PluginView.g.cs
+/home/runner/workspace/TNP/TNP.App/obj/Debug/net6.0-windows/Views/SimulationView.g.cs
+/home/runner/workspace/TNP/TNP.App/obj/Debug/net6.0-windows/App.g.cs
+/home/runner/workspace/TNP/TNP.App/obj/Debug/net6.0-windows/GeneratedInternalTypeHelper.g.cs
+/home/runner/workspace/TNP/TNP.App/obj/Debug/net6.0-windows/TNP.App_MarkupCompile.cache
+/home/runner/workspace/TNP/TNP.App/obj/Debug/net6.0-windows/TNP.App_MarkupCompile.lref
+/home/runner/workspace/TNP/TNP.App/bin/Debug/net6.0-windows/TNP.App
+/home/runner/workspace/TNP/TNP.App/bin/Debug/net6.0-windows/TNP.App.deps.json
+/home/runner/workspace/TNP/TNP.App/bin/Debug/net6.0-windows/TNP.App.runtimeconfig.json
+/home/runner/workspace/TNP/TNP.App/bin/Debug/net6.0-windows/TNP.App.dll
+/home/runner/workspace/TNP/TNP.App/bin/Debug/net6.0-windows/TNP.App.pdb
+/home/runner/workspace/TNP/TNP.App/bin/Debug/net6.0-windows/Newtonsoft.Json.dll
+/home/runner/workspace/TNP/TNP.App/obj/Debug/net6.0-windows/App.baml
+/home/runner/workspace/TNP/TNP.App/obj/Debug/net6.0-windows/MainWindow.baml
+/home/runner/workspace/TNP/TNP.App/obj/Debug/net6.0-windows/Views/ElementPropertiesView.baml
+/home/runner/workspace/TNP/TNP.App/obj/Debug/net6.0-windows/Views/NetworkDesignerView.baml
+/home/runner/workspace/TNP/TNP.App/obj/Debug/net6.0-windows/Views/PluginView.baml
+/home/runner/workspace/TNP/TNP.App/obj/Debug/net6.0-windows/Views/SimulationView.baml
+/home/runner/workspace/TNP/TNP.App/obj/Debug/net6.0-windows/TNP.App.g.resources
+/home/runner/workspace/TNP/TNP.App/obj/Debug/net6.0-windows/TNP.App.GeneratedMSBuildEditorConfig.editorconfig
+/home/runner/workspace/TNP/TNP.App/obj/Debug/net6.0-windows/TNP.App.AssemblyInfoInputs.cache
+/home/runner/workspace/TNP/TNP.App/obj/Debug/net6.0-windows/TNP.App.AssemblyInfo.cs
+/home/runner/workspace/TNP/TNP.App/obj/Debug/net6.0-windows/TNP.App.csproj.CoreCompileInputs.cache
+/home/runner/workspace/TNP/TNP.App/obj/Debug/net6.0-windows/TNP.App.csproj.CopyComplete
+/home/runner/workspace/TNP/TNP.App/obj/Debug/net6.0-windows/TNP.App.dll
+/home/runner/workspace/TNP/TNP.App/obj/Debug/net6.0-windows/refint/TNP.App.dll
+/home/runner/workspace/TNP/TNP.App/obj/Debug/net6.0-windows/TNP.App.pdb
+/home/runner/workspace/TNP/TNP.App/obj/Debug/net6.0-windows/TNP.App.genruntimeconfig.cache
+/home/runner/workspace/TNP/TNP.App/obj/Debug/net6.0-windows/ref/TNP.App.dll
+C:\Users\..DEKSTOP-4-HANAA\OneDrive - Région Île-de-France\Documents\Codage\Perso\TNP\The-Network-Project\TNP.App\obj\Debug\net6.0-windows\TNP.App.csproj.AssemblyReference.cache
+C:\Users\..DEKSTOP-4-HANAA\OneDrive - Région Île-de-France\Documents\Codage\Perso\TNP\The-Network-Project\TNP.App\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\..DEKSTOP-4-HANAA\OneDrive - Région Île-de-France\Documents\Codage\Perso\TNP\The-Network-Project\TNP.App\obj\Debug\net6.0-windows\Views\ElementPropertiesView.g.cs
+C:\Users\..DEKSTOP-4-HANAA\OneDrive - Région Île-de-France\Documents\Codage\Perso\TNP\The-Network-Project\TNP.App\obj\Debug\net6.0-windows\Views\NetworkDesignerView.g.cs
+C:\Users\..DEKSTOP-4-HANAA\OneDrive - Région Île-de-France\Documents\Codage\Perso\TNP\The-Network-Project\TNP.App\obj\Debug\net6.0-windows\Views\PluginView.g.cs
+C:\Users\..DEKSTOP-4-HANAA\OneDrive - Région Île-de-France\Documents\Codage\Perso\TNP\The-Network-Project\TNP.App\obj\Debug\net6.0-windows\Views\SimulationView.g.cs
+C:\Users\..DEKSTOP-4-HANAA\OneDrive - Région Île-de-France\Documents\Codage\Perso\TNP\The-Network-Project\TNP.App\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\..DEKSTOP-4-HANAA\OneDrive - Région Île-de-France\Documents\Codage\Perso\TNP\The-Network-Project\TNP.App\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\..DEKSTOP-4-HANAA\OneDrive - Région Île-de-France\Documents\Codage\Perso\TNP\The-Network-Project\TNP.App\obj\Debug\net6.0-windows\TNP.App_MarkupCompile.cache
+C:\Users\..DEKSTOP-4-HANAA\OneDrive - Région Île-de-France\Documents\Codage\Perso\TNP\The-Network-Project\TNP.App\obj\Debug\net6.0-windows\TNP.App_MarkupCompile.lref
+C:\Users\..DEKSTOP-4-HANAA\OneDrive - Région Île-de-France\Documents\Codage\Perso\TNP\The-Network-Project\TNP.App\obj\Debug\net6.0-windows\TNP.App.dll
+C:\Users\..DEKSTOP-4-HANAA\OneDrive - Région Île-de-France\Documents\Codage\Perso\TNP\The-Network-Project\TNP.App\obj\Debug\net6.0-windows\refint\TNP.App.dll
+C:\Users\..DEKSTOP-4-HANAA\OneDrive - Région Île-de-France\Documents\Codage\Perso\TNP\The-Network-Project\TNP.App\obj\Debug\net6.0-windows\TNP.App.pdb
+C:\Users\..DEKSTOP-4-HANAA\OneDrive - Région Île-de-France\Documents\Codage\Perso\TNP\The-Network-Project\TNP.App\bin\Debug\net6.0-windows\TNP.App.exe
+C:\Users\..DEKSTOP-4-HANAA\OneDrive - Région Île-de-France\Documents\Codage\Perso\TNP\The-Network-Project\TNP.App\bin\Debug\net6.0-windows\TNP.App.deps.json
+C:\Users\..DEKSTOP-4-HANAA\OneDrive - Région Île-de-France\Documents\Codage\Perso\TNP\The-Network-Project\TNP.App\bin\Debug\net6.0-windows\TNP.App.runtimeconfig.json
+C:\Users\..DEKSTOP-4-HANAA\OneDrive - Région Île-de-France\Documents\Codage\Perso\TNP\The-Network-Project\TNP.App\bin\Debug\net6.0-windows\TNP.App.dll
+C:\Users\..DEKSTOP-4-HANAA\OneDrive - Région Île-de-France\Documents\Codage\Perso\TNP\The-Network-Project\TNP.App\bin\Debug\net6.0-windows\TNP.App.pdb
+C:\Users\..DEKSTOP-4-HANAA\OneDrive - Région Île-de-France\Documents\Codage\Perso\TNP\The-Network-Project\TNP.App\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\..DEKSTOP-4-HANAA\OneDrive - Région Île-de-France\Documents\Codage\Perso\TNP\The-Network-Project\TNP.App\obj\Debug\net6.0-windows\App.baml
+C:\Users\..DEKSTOP-4-HANAA\OneDrive - Région Île-de-France\Documents\Codage\Perso\TNP\The-Network-Project\TNP.App\obj\Debug\net6.0-windows\MainWindow.baml
+C:\Users\..DEKSTOP-4-HANAA\OneDrive - Région Île-de-France\Documents\Codage\Perso\TNP\The-Network-Project\TNP.App\obj\Debug\net6.0-windows\Views\ElementPropertiesView.baml
+C:\Users\..DEKSTOP-4-HANAA\OneDrive - Région Île-de-France\Documents\Codage\Perso\TNP\The-Network-Project\TNP.App\obj\Debug\net6.0-windows\Views\NetworkDesignerView.baml
+C:\Users\..DEKSTOP-4-HANAA\OneDrive - Région Île-de-France\Documents\Codage\Perso\TNP\The-Network-Project\TNP.App\obj\Debug\net6.0-windows\Views\PluginView.baml
+C:\Users\..DEKSTOP-4-HANAA\OneDrive - Région Île-de-France\Documents\Codage\Perso\TNP\The-Network-Project\TNP.App\obj\Debug\net6.0-windows\Views\SimulationView.baml
+C:\Users\..DEKSTOP-4-HANAA\OneDrive - Région Île-de-France\Documents\Codage\Perso\TNP\The-Network-Project\TNP.App\obj\Debug\net6.0-windows\TNP.App.g.resources
+C:\Users\..DEKSTOP-4-HANAA\OneDrive - Région Île-de-France\Documents\Codage\Perso\TNP\The-Network-Project\TNP.App\obj\Debug\net6.0-windows\TNP.App.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\..DEKSTOP-4-HANAA\OneDrive - Région Île-de-France\Documents\Codage\Perso\TNP\The-Network-Project\TNP.App\obj\Debug\net6.0-windows\TNP.App.AssemblyInfoInputs.cache
+C:\Users\..DEKSTOP-4-HANAA\OneDrive - Région Île-de-France\Documents\Codage\Perso\TNP\The-Network-Project\TNP.App\obj\Debug\net6.0-windows\TNP.App.AssemblyInfo.cs
+C:\Users\..DEKSTOP-4-HANAA\OneDrive - Région Île-de-France\Documents\Codage\Perso\TNP\The-Network-Project\TNP.App\obj\Debug\net6.0-windows\TNP.App.csproj.CoreCompileInputs.cache
+C:\Users\..DEKSTOP-4-HANAA\OneDrive - Région Île-de-France\Documents\Codage\Perso\TNP\The-Network-Project\TNP.App\obj\Debug\net6.0-windows\TNP.App.csproj.Up2Date
+C:\Users\..DEKSTOP-4-HANAA\OneDrive - Région Île-de-France\Documents\Codage\Perso\TNP\The-Network-Project\TNP.App\obj\Debug\net6.0-windows\TNP.App.genruntimeconfig.cache
+C:\Users\..DEKSTOP-4-HANAA\OneDrive - Région Île-de-France\Documents\Codage\Perso\TNP\The-Network-Project\TNP.App\obj\Debug\net6.0-windows\ref\TNP.App.dll

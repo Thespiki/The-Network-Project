@@ -1,0 +1,181 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Windows;
+using System.Linq;
+
+namespace TNP.App.Models
+{
+    /// <summary>
+    /// Base class for components in a network configuration.
+    /// </summary>
+    public abstract class NetworkComponent : INotifyPropertyChanged
+    {
+        private string _name;
+        private bool _isSelected;
+        private Dictionary<string, object> _properties;
+        private List<Connection> _connections;
+        private Point _position;
+
+        /// <summary>
+        /// Gets or sets the unique identifier for the network component.
+        /// </summary>
+        public Guid Id { get; set; }
+
+        /// <summary>
+        /// Gets or sets the name of the network component.
+        /// </summary>
+        public string Name
+        {
+            get => _name;
+            set
+            {
+                if (_name != value)
+                {
+                    _name = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the component is currently selected in the UI.
+        /// </summary>
+        public bool IsSelected
+        {
+            get => _isSelected;
+            set
+            {
+                if (_isSelected != value)
+                {
+                    _isSelected = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the position of the network component on the canvas.
+        /// </summary>
+        public Point Position
+        {
+            get => _position;
+            set
+            {
+                if (_position != value)
+                {
+                    _position = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the properties specific to this component type.
+        /// </summary>
+        public Dictionary<string, object> Properties
+        {
+            get => _properties;
+            set
+            {
+                _properties = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        /// Gets the current connections to this component.
+        /// </summary>
+        public List<Connection> Connections
+        {
+            get => _connections;
+            private set
+            {
+                _connections = value;
+                OnPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        /// Gets the type name of the component.
+        /// </summary>
+        public abstract string ComponentType { get; }
+
+        /// <summary>
+        /// Gets the maximum number of connections this component can have.
+        /// </summary>
+        public abstract int MaxConnections { get; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NetworkComponent"/> class.
+        /// </summary>
+        protected NetworkComponent()
+        {
+            Id = Guid.NewGuid();
+            _name = string.Empty;
+            _properties = new Dictionary<string, object>();
+            _connections = new List<Connection>();
+            _position = new Point(0, 0);
+            InitializeDefaultProperties();
+        }
+
+        /// <summary>
+        /// Initializes the default properties for this component type.
+        /// </summary>
+        protected abstract void InitializeDefaultProperties();
+
+        /// <summary>
+        /// Validates the configuration of this network component.
+        /// </summary>
+        /// <param name="errorMessage">When this method returns, contains an error message if validation failed.</param>
+        /// <returns>true if the configuration is valid; otherwise, false.</returns>
+        public abstract bool ValidateConfiguration(out string errorMessage);
+
+        /// <summary>
+        /// Adds a connection to this component.
+        /// </summary>
+        /// <param name="connection">The connection to add.</param>
+        /// <returns>true if the connection was successfully added; otherwise, false.</returns>
+        public virtual bool AddConnection(Connection connection)
+        {
+            if (Connections.Count >= MaxConnections)
+            {
+                return false;
+            }
+
+            Connections.Add(connection);
+            return true;
+        }
+
+        /// <summary>
+        /// Removes a connection from this component.
+        /// </summary>
+        /// <param name="connection">The connection to remove.</param>
+        /// <returns>true if the connection was successfully removed; otherwise, false.</returns>
+        public virtual bool RemoveConnection(Connection connection)
+        {
+            return Connections.Remove(connection);
+        }
+
+        /// <summary>
+        /// Creates a deep copy of this network component.
+        /// </summary>
+        /// <returns>A new instance of a network component with the same properties.</returns>
+        public abstract NetworkComponent Clone();
+
+        /// <summary>
+        /// Occurs when a property value changes.
+        /// </summary>
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        /// <summary>
+        /// Raises the PropertyChanged event.
+        /// </summary>
+        /// <param name="propertyName">The name of the property that changed.</param>
+        protected virtual void OnPropertyChanged([CallerMemberName] string? propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+    }
+}
