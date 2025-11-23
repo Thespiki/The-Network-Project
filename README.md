@@ -1,17 +1,45 @@
-# 🔌The Network Project (TNP)🔌
-This is an app that allows to manage or simulate your network with a simple interface and withouth any knowledge.
-It will implement tutorials, network simulations, hardware configurators, software configurators, operating systems configurator etc...
-## Capabilites of TNP
-### What wil you be able to do ?
-In TNP, you will be able to configure a simple or complex network with ease : you can create/manage a school network, a society network, your home network, your LAN party or whatever you want.
-You will have a hardware configurator which will allow you to get a config for a server or a pc, or even have the best configuration for your network within your budget.
-Simulate a network to preview how will it work, what you will need and what will it be able to do.
+# 🔌 The Network Project (TNP)
 
-### What can you create in your network ?
-TNP will allow you to manage servers, routers, modems, eventually computers and maybe more (even if you cannot configure it within TNP you will still be able to configure other thnigs such as its place in the network)
-TNP will allow with only a few clicks to create a web server, a game server, a database, with explainations and total management.
-#
-## TNP open source ?
-TNP will be open source so that the community can contribute with hardware, server configuration, bugs etc...
+The Network Project (TNP) is an application designed to let anyone create, configure, and simulate a computer network without requiring advanced technical knowledge. Its purpose is to make network design simple, intuitive, and fully guided (for beginners) or automate tasks, configurations or gain time in networking setups (for advanced).
 
-'**🛠This project is under construction, once the beta is out, you will be able to contribute to this project. :), stay tuned for more!🛠**'
+## 🎯 Goal
+Provide an accessible and complete tool to imagine, prototype, and configure a network whether it's a small home setup or a large-scale environment such as a school, business, or LAN event.
+
+## 🚀 Main Features
+
+### 🗺️ Network Creation & Management
+- Build network topologies visually: routers, switches, modems, servers, computers, and more.
+- Connect and organize elements into a functional infrastructure.
+- Manage multiple projects and different types of networks.
+
+### 🧩 Hardware & Service Configuration
+- Configure servers, routers, and machines with just a few clicks.
+- Generate recommended hardware configurations based on your needs or budget.
+- Quickly deploy services such as:  
+  - Web servers  
+  - Databases  
+  - Game servers  
+  - And more, hopefully with an active community
+
+### 🧪 Network Simulation
+- Simulate how your network will behave before deploying it.
+- View performance, limitations, and resource requirements.
+- Identify weaknesses and potential improvements.
+
+### 📚 Tutorial Mode
+- Learn step-by-step how to build and understand a network.
+- Discover the basics of routing, services, security, and more.
+- This part is ideal for beginners, students, and curious users.
+
+### 🛠️ Open Source
+TNP is fully open source.  
+The community will be able to contribute to:
+- The hardware catalog  
+- Server templates  
+- Simulation improvements  
+- Tutorials, documentation, optimisations and bug fixes
+
+## 🔧 Project Status
+**🛠 The project is currently under development. A beta version will be released soon to allow early contributions.**
+
+Stay tuned for updates ^^
