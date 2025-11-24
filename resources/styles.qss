@@ -1,0 +1,70 @@
+/*
+  Global squared black & white theme
+  - Backgrounds: white (#fff)
+  - Text/borders: black (#000)
+  - Accents: only rgba(0,0,0,alpha) overlays allowed
+  - No border-radius anywhere
+*/
+
+* {
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #000000;
+  border-radius: 0px;
+}
+
+QMainWindow, QDockWidget, QToolBar, QStatusBar, QMenuBar, QWidget {
+  background: #ffffff;
+  color: #000000;
+}
+
+QMenuBar, QToolBar {
+  border-bottom: 1px solid #000000;
+}
+
+QToolButton, QPushButton, QListWidget, QListView, QTreeView, QLineEdit, QTextEdit, QPlainTextEdit, QComboBox {
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #000000;
+  border-radius: 0px;
+}
+
+QToolButton:hover, QPushButton:hover, QListWidget::item:hover {
+  background: rgba(0,0,0,0.08);
+}
+
+QToolButton:pressed, QPushButton:pressed, QListWidget::item:selected {
+  background: #000000;
+  color: #ffffff;
+}
+
+QStatusBar {
+  border-top: 1px solid #000000;
+}
+
+QScrollBar:vertical, QScrollBar:horizontal {
+  background: #ffffff;
+  border: 1px solid #000000;
+  width: 16px;
+  height: 16px;
+}
+
+QScrollBar::handle:vertical, QScrollBar::handle:horizontal {
+  background: #000000;
+  min-height: 20px;
+  min-width: 20px;
+}
+
+QScrollBar::add-line, QScrollBar::sub-line {
+  background: #ffffff;
+}
+
+QDockWidget::title {
+  background: #ffffff;
+  color: #000000;
+  padding: 4px;
+}
+
+QGraphicsView, QGraphicsScene {
+  background: #ffffff;
+}
