@@ -16,8 +16,10 @@ add_executable(tnp
     src/main.cpp
     src/MainWindow.cpp
     src/CanvasView.cpp
+    src/NetworkModel.cpp
     include/MainWindow.h
     include/CanvasView.h
+    include/NetworkModel.h
     resources/resources.qrc
 )
 
