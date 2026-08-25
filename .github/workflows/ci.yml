@@ -1,0 +1,107 @@
+name: CI
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_dispatch:
+
+# A new push to the same branch cancels the run in progress: the old result is
+# about to be irrelevant and the runners are better spent on the new commit.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: ${{ matrix.name }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: Windows x64 (MSVC)
+            os: windows-latest
+            preset: windows-release
+            test-preset: windows-release
+          - name: Linux x64 (GCC)
+            os: ubuntu-latest
+            preset: linux-release
+            test-preset: linux-release
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # The dependencies are fetched at configure time and pinned to exact tags,
+      # so caching them turns a two-minute download into a few seconds.
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: build/${{ matrix.preset }}/_deps
+          key: deps-${{ matrix.os }}-${{ hashFiles('cmake/Dependencies.cmake') }}
+
+      - name: Install build tools (Linux)
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ninja-build \
+            libgl1-mesa-dev libx11-dev libxrandr-dev libxinerama-dev \
+            libxcursor-dev libxi-dev libxkbcommon-dev
+
+      - name: Configure
+        run: cmake --preset ${{ matrix.preset }} -DTNP_WARNINGS_AS_ERRORS=ON
+
+      - name: Build
+        run: cmake --build --preset ${{ matrix.preset }}
+
+      - name: Test
+        run: ctest --preset ${{ matrix.test-preset }}
+
+      # The headless tool exercises the engine end to end without a display,
+      # which is the closest CI can get to using the application.
+      - name: Smoke test the headless tool
+        shell: bash
+        run: |
+          set -euo pipefail
+          BIN=$(find build -name 'tnpcli*' -type f -perm -u+x | head -1)
+          "$BIN" demo sample.tnp
+          "$BIN" info sample.tnp
+          "$BIN" validate sample.tnp
+          "$BIN" test sample.tnp
+          "$BIN" ping sample.tnp PC1 Server1
+          "$BIN" export sample.tnp topology.svg
+          "$BIN" convert sample.tnp sample.tnpjson
+          "$BIN" validate sample.tnpjson
+          test -s topology.svg
+
+      - name: Upload the sample export
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sample-${{ matrix.os }}
+          path: |
+            topology.svg
+            sample.tnpjson
+          if-no-files-found: ignore
+
+  headless:
+    name: Linux headless build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install build tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ninja-build
+
+      # Proves the engine really does build without a windowing system: nothing
+      # below `ui` may depend on GLFW or Dear ImGui, and this is what enforces it.
+      - name: Configure without the UI
+        run: cmake --preset linux-headless -DTNP_WARNINGS_AS_ERRORS=ON
+
+      - name: Build
+        run: cmake --build --preset linux-headless
+
+      - name: Test
+        run: ctest --preset linux-headless
