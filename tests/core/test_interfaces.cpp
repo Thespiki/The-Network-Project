@@ -13,9 +13,12 @@ using namespace tnp::tests;
 TEST_CASE("Devices are created with the interfaces their type implies", "[core][device]") {
     Network network;
 
-    const Device& pc = addDevice(network, DeviceType::Pc, "PC1");
-    const Device& router = addDevice(network, DeviceType::Router, "Router1");
-    const Device& sw = addDevice(network, DeviceType::Switch, "Switch1");
+    // Bound by non-const reference on purpose: GCC's -Wdangling-reference
+    // cannot prove that a `const T&` bound to a function returning `T&` with a
+    // temporary argument is safe, and warns even though the network owns these.
+    Device& pc = addDevice(network, DeviceType::Pc, "PC1");
+    Device& router = addDevice(network, DeviceType::Router, "Router1");
+    Device& sw = addDevice(network, DeviceType::Switch, "Switch1");
 
     CHECK(pc.interfaceCount() == 2); // wired plus a wireless port that starts down
     CHECK(router.interfaceCount() == Router::kDefaultEthernetPorts + Router::kDefaultSerialPorts);

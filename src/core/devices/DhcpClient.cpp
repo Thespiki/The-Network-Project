@@ -118,9 +118,14 @@ void DhcpClient::sendRequest(DeviceContext& context, Interface& iface, Session& 
 
 void DhcpClient::applyBinding(DeviceContext& context, Interface& iface, Session& session,
                               const DhcpMessage& ack) {
+    // A server that omits the subnet mask option is unusual. /24 is the only
+    // sensible assumption for the private ranges these pools live in, and it is
+    // better than refusing a lease the server clearly meant to grant.
+    constexpr u8 kAssumedPrefixLength = 24;
+
     const auto prefixLength = ack.subnetMask
                                   ? Ipv4Prefix::prefixLengthForMask(*ack.subnetMask)
-                                  : std::optional<u8>{24};
+                                  : std::optional<u8>{kAssumedPrefixLength};
     if (!prefixLength) return;
 
     const Ipv4Prefix assigned{ack.yourAddress, *prefixLength};

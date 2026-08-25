@@ -12,6 +12,7 @@ function(tnp_set_target_options target)
             /Zc:preprocessor
             /utf-8
             /MP                 # parallel compilation
+            /external:W0        # silence warnings from CMake SYSTEM includes
             /wd4251             # STL types in exported class interfaces
         )
         target_compile_definitions(${target} PRIVATE
