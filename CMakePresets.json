@@ -1,0 +1,117 @@
+{
+  "version": 4,
+  "cmakeMinimumRequired": { "major": 3, "minor": 23, "patch": 0 },
+  "configurePresets": [
+    {
+      "name": "base",
+      "hidden": true,
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "installDir": "${sourceDir}/install/${presetName}",
+      "cacheVariables": {
+        "TNP_BUILD_TESTS": "ON",
+        "TNP_BUILD_UI": "ON"
+      }
+    },
+    {
+      "name": "windows-base",
+      "hidden": true,
+      "inherits": "base",
+      "generator": "Visual Studio 17 2022",
+      "architecture": { "value": "x64", "strategy": "set" },
+      "condition": { "type": "equals", "lhs": "${hostSystemName}", "rhs": "Windows" }
+    },
+    {
+      "name": "windows-debug",
+      "displayName": "Windows x64 Debug",
+      "inherits": "windows-base",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Debug" }
+    },
+    {
+      "name": "windows-release",
+      "displayName": "Windows x64 Release",
+      "inherits": "windows-base",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Release" }
+    },
+    {
+      "name": "windows-ninja-debug",
+      "displayName": "Windows x64 Debug (Ninja + clang-cl or MSVC)",
+      "inherits": "base",
+      "generator": "Ninja",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Debug" },
+      "condition": { "type": "equals", "lhs": "${hostSystemName}", "rhs": "Windows" }
+    },
+    {
+      "name": "linux-base",
+      "hidden": true,
+      "inherits": "base",
+      "generator": "Ninja",
+      "condition": { "type": "equals", "lhs": "${hostSystemName}", "rhs": "Linux" }
+    },
+    {
+      "name": "linux-debug",
+      "displayName": "Linux x64 Debug",
+      "inherits": "linux-base",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Debug" }
+    },
+    {
+      "name": "linux-release",
+      "displayName": "Linux x64 Release",
+      "inherits": "linux-base",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Release" }
+    },
+    {
+      "name": "linux-headless",
+      "displayName": "Linux x64 Release without the graphical UI",
+      "inherits": "linux-base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "TNP_BUILD_UI": "OFF"
+      }
+    },
+    {
+      "name": "macos-base",
+      "hidden": true,
+      "inherits": "base",
+      "generator": "Ninja",
+      "condition": { "type": "equals", "lhs": "${hostSystemName}", "rhs": "Darwin" }
+    },
+    {
+      "name": "macos-debug",
+      "displayName": "macOS Debug",
+      "inherits": "macos-base",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Debug" }
+    },
+    {
+      "name": "macos-release",
+      "displayName": "macOS Release",
+      "inherits": "macos-base",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Release" }
+    }
+  ],
+  "buildPresets": [
+    { "name": "windows-debug",       "configurePreset": "windows-debug",       "configuration": "Debug" },
+    { "name": "windows-release",     "configurePreset": "windows-release",     "configuration": "Release" },
+    { "name": "windows-ninja-debug", "configurePreset": "windows-ninja-debug" },
+    { "name": "linux-debug",         "configurePreset": "linux-debug" },
+    { "name": "linux-release",       "configurePreset": "linux-release" },
+    { "name": "linux-headless",      "configurePreset": "linux-headless" },
+    { "name": "macos-debug",         "configurePreset": "macos-debug" },
+    { "name": "macos-release",       "configurePreset": "macos-release" }
+  ],
+  "testPresets": [
+    {
+      "name": "test-base",
+      "hidden": true,
+      "output": { "outputOnFailure": true },
+      "execution": { "noTestsAction": "error", "stopOnFailure": false }
+    },
+    { "name": "windows-debug",       "inherits": "test-base", "configurePreset": "windows-debug",       "configuration": "Debug" },
+    { "name": "windows-release",     "inherits": "test-base", "configurePreset": "windows-release",     "configuration": "Release" },
+    { "name": "windows-ninja-debug", "inherits": "test-base", "configurePreset": "windows-ninja-debug" },
+    { "name": "linux-debug",         "inherits": "test-base", "configurePreset": "linux-debug" },
+    { "name": "linux-release",       "inherits": "test-base", "configurePreset": "linux-release" },
+    { "name": "linux-headless",      "inherits": "test-base", "configurePreset": "linux-headless" },
+    { "name": "macos-debug",         "inherits": "test-base", "configurePreset": "macos-debug" },
+    { "name": "macos-release",       "inherits": "test-base", "configurePreset": "macos-release" }
+  ]
+}
