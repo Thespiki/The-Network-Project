@@ -83,10 +83,14 @@ DHCP · DNS
 
 ---
 
-## Screenshots
+## The sample project
 
-Not included in the repository. Run `tnp` and open **File → New from sample** to see the
-application with a working network in it.
+![The sample topology](docs/sample-topology.svg)
+
+That picture is not a screenshot: it is `tnpcli export` writing the project model to SVG.
+Open **File → New from sample** in the application to get the same network, then press
+**Play** and ping `Server1` from `PC1` to watch ARP resolve, the switch learn, and the two
+routers forward.
 
 ---
 

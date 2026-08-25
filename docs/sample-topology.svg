@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="340" viewBox="0 0 1060 340">
+<title>Sample Network</title>
+<rect width="100%" height="100%" fill="#161a20"/>
+<g font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif">
+<line x1="150.0" y1="170.0" x2="340.0" y2="170.0" stroke="#5f7d95" stroke-width="2"/>
+<text x="214.0" y="170.0" fill="#95a2b3" font-size="9" text-anchor="middle">Gi0</text>
+<text x="276.0" y="170.0" fill="#95a2b3" font-size="9" text-anchor="middle">Gi0/1</text>
+<line x1="340.0" y1="170.0" x2="530.0" y2="170.0" stroke="#5f7d95" stroke-width="2"/>
+<text x="404.0" y="170.0" fill="#95a2b3" font-size="9" text-anchor="middle">Gi0/2</text>
+<text x="466.0" y="170.0" fill="#95a2b3" font-size="9" text-anchor="middle">Gi0/0</text>
+<line x1="530.0" y1="170.0" x2="720.0" y2="170.0" stroke="#5f7d95" stroke-width="2"/>
+<text x="594.0" y="170.0" fill="#95a2b3" font-size="9" text-anchor="middle">Gi0/1</text>
+<text x="656.0" y="170.0" fill="#95a2b3" font-size="9" text-anchor="middle">Gi0/0</text>
+<line x1="720.0" y1="170.0" x2="910.0" y2="170.0" stroke="#5f7d95" stroke-width="2"/>
+<text x="784.0" y="170.0" fill="#95a2b3" font-size="9" text-anchor="middle">Gi0/1</text>
+<text x="846.0" y="170.0" fill="#95a2b3" font-size="9" text-anchor="middle">Gi0</text>
+<rect x="80.0" y="80.0" width="330.0" height="180.0" fill="none" stroke="#95a2b3" stroke-width="2.0" rx="6"/>
+<text x="88.0" y="100.0" fill="#e6eaf0" font-size="16">Office LAN  192.168.1.0/24</text>
+<rect x="650.0" y="80.0" width="330.0" height="180.0" fill="none" stroke="#95a2b3" stroke-width="2.0" rx="6"/>
+<text x="658.0" y="100.0" fill="#e6eaf0" font-size="16">Data centre  172.16.0.0/24</text>
+<rect x="104.0" y="140.0" width="92.0" height="60.0" rx="8" fill="#232a34" stroke="#3d4a5c" stroke-width="1.5"/>
+<rect x="112.0" y="146.0" width="76.0" height="4" rx="2" fill="#4c8bd8"/>
+<text x="150.0" y="172.0" fill="#e6eaf0" font-size="12" font-weight="600" text-anchor="middle">PC1</text>
+<text x="150.0" y="186.0" fill="#95a2b3" font-size="9" text-anchor="middle">PC</text>
+<text x="150.0" y="216.0" fill="#95a2b3" font-size="10" font-family="monospace" text-anchor="middle">192.168.1.10/24</text>
+<rect x="294.0" y="140.0" width="92.0" height="60.0" rx="8" fill="#232a34" stroke="#3d4a5c" stroke-width="1.5"/>
+<rect x="302.0" y="146.0" width="76.0" height="4" rx="2" fill="#3fae8f"/>
+<text x="340.0" y="172.0" fill="#e6eaf0" font-size="12" font-weight="600" text-anchor="middle">Switch1</text>
+<text x="340.0" y="186.0" fill="#95a2b3" font-size="9" text-anchor="middle">Switch</text>
+<rect x="484.0" y="140.0" width="92.0" height="60.0" rx="8" fill="#232a34" stroke="#3d4a5c" stroke-width="1.5"/>
+<rect x="492.0" y="146.0" width="76.0" height="4" rx="2" fill="#3fae8f"/>
+<text x="530.0" y="172.0" fill="#e6eaf0" font-size="12" font-weight="600" text-anchor="middle">Router1</text>
+<text x="530.0" y="186.0" fill="#95a2b3" font-size="9" text-anchor="middle">Router</text>
+<text x="530.0" y="216.0" fill="#95a2b3" font-size="10" font-family="monospace" text-anchor="middle">192.168.1.1/24</text>
+<rect x="674.0" y="140.0" width="92.0" height="60.0" rx="8" fill="#232a34" stroke="#3d4a5c" stroke-width="1.5"/>
+<rect x="682.0" y="146.0" width="76.0" height="4" rx="2" fill="#3fae8f"/>
+<text x="720.0" y="172.0" fill="#e6eaf0" font-size="12" font-weight="600" text-anchor="middle">Router2</text>
+<text x="720.0" y="186.0" fill="#95a2b3" font-size="9" text-anchor="middle">Router</text>
+<text x="720.0" y="216.0" fill="#95a2b3" font-size="10" font-family="monospace" text-anchor="middle">10.0.0.2/30</text>
+<rect x="864.0" y="140.0" width="92.0" height="60.0" rx="8" fill="#232a34" stroke="#3d4a5c" stroke-width="1.5"/>
+<rect x="872.0" y="146.0" width="76.0" height="4" rx="2" fill="#4c8bd8"/>
+<text x="910.0" y="172.0" fill="#e6eaf0" font-size="12" font-weight="600" text-anchor="middle">Server1</text>
+<text x="910.0" y="186.0" fill="#95a2b3" font-size="9" text-anchor="middle">Server</text>
+<text x="910.0" y="216.0" fill="#95a2b3" font-size="10" font-family="monospace" text-anchor="middle">172.16.0.20/24</text>
+</g>
+</svg>
