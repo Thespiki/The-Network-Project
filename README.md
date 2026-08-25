@@ -96,6 +96,19 @@ application with a working network in it.
 - CMake 3.20 or newer
 - A GPU with OpenGL 3.2 support, for the graphical build
 
+On Linux, the graphical build additionally needs the X11 and Wayland development packages
+that GLFW compiles against:
+
+```bash
+sudo apt-get install -y \
+  libgl1-mesa-dev \
+  libx11-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev \
+  libwayland-dev wayland-protocols libxkbcommon-dev
+```
+
+Configure with `-DTNP_BUILD_UI=OFF` (or use the `linux-headless` preset) to build the engine
+and `tnpcli` without any of them.
+
 Dependencies are downloaded automatically at configure time and pinned to exact versions:
 
 | Dependency | Version | Used for |
