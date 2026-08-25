@@ -28,7 +28,7 @@ new project → drag devices → cable interfaces → assign addresses → add r
 That path is covered by an integration test (`tests/integration/test_workflow.cpp`), so it
 stays working.
 
-**180 tests pass.** See [What is and is not simulated](#what-is-and-is-not-simulated) for an
+**186 tests pass.** See [What is and is not simulated](#what-is-and-is-not-simulated) for an
 honest account of the boundaries.
 
 ---

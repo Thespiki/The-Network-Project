@@ -46,6 +46,7 @@ tnp_add_test_executable(tnp_tests_simulation
         simulation/test_arp_and_switching.cpp
         simulation/test_forwarding.cpp
         simulation/test_packet_decoder.cpp
+        simulation/test_services.cpp
     DEPS tnp::tnp_simulation)
 
 tnp_add_test_executable(tnp_tests_serialization
