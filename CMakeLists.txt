@@ -64,7 +64,18 @@ if(TNP_BUILD_UI)
     tnp_set_target_options(tnp)
 
     if(WIN32)
+        # A release build is a desktop application, so it is linked into the
+        # Windows subsystem and no console window appears behind it. Debug keeps
+        # the console, where the log is genuinely useful.
         set_target_properties(tnp PROPERTIES WIN32_EXECUTABLE $<NOT:$<CONFIG:Debug>>)
+
+        # That subsystem expects WinMain. main.cpp deliberately defines a plain,
+        # portable main instead, so the CRT entry point is pointed at it rather
+        # than adding a Windows-only shim to an otherwise portable file.
+        # MinGW needs none of this: it supplies its own WinMain that calls main.
+        if(MSVC)
+            target_link_options(tnp PRIVATE $<$<NOT:$<CONFIG:Debug>>:/ENTRY:mainCRTStartup>)
+        endif()
     endif()
 
     if(APPLE)
