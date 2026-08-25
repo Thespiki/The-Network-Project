@@ -13,7 +13,6 @@ CMakeUserPresets.json
 cmake_install.cmake
 compile_commands.json
 CTestTestfile.cmake
-Testing/
 
 # IDEs
 .vs/
