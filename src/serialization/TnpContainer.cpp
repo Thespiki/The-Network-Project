@@ -4,6 +4,7 @@
 #include "utilities/Time.h"
 
 #include <algorithm>
+#include <array>
 #include <format>
 
 namespace tnp::serial {

@@ -1,5 +1,7 @@
 #include "simulation/EventQueue.h"
 
+#include <utility>
+
 namespace tnp::sim {
 
 std::string_view simulationEventName(const SimulationEvent& event) {

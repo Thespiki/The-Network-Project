@@ -1,5 +1,7 @@
 #include "simulation/NetworkScheduler.h"
 
+#include <utility>
+
 namespace tnp::sim {
 
 u64 NetworkScheduler::schedule(Duration delay, SimulationEventPayload payload) {

@@ -3,6 +3,7 @@
 #include <array>
 #include <fstream>
 #include <iostream>
+#include <utility>
 
 namespace tnp::logging {
 namespace {

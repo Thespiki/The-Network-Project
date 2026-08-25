@@ -5,6 +5,7 @@
 
 #include <algorithm>
 #include <format>
+#include <utility>
 
 namespace tnp::core {
 namespace {
