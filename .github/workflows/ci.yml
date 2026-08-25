@@ -52,6 +52,9 @@ jobs:
             libx11-dev libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev \
             libwayland-dev wayland-protocols libxkbcommon-dev
 
+      # The Windows preset deliberately does not name a generator: the runner
+      # image moves to a new Visual Studio every year, and pinning one only
+      # guarantees a broken build the day it changes.
       - name: Configure
         run: cmake --preset ${{ matrix.preset }} -DTNP_WARNINGS_AS_ERRORS=ON
 
